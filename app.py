@@ -622,4 +622,4 @@ with gr.Blocks(css=css, theme=gr.themes.Monochrome(primary_hue="indigo", neutral
         queue=False
     )
 
-demo.queue(max_size=12).launch(show_error=True)
+demo.queue(max_size=12).launch(server_name="127.0.0.1", server_port=7860, show_error=True)
