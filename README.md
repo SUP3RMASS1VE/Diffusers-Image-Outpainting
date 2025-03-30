@@ -1,4 +1,5 @@
 # Diffusers Image Outpainting
+![Screenshot 2025-03-30 205918](https://github.com/user-attachments/assets/9658e9cf-89fc-42d0-bd27-cf3a89b40492)
 
 ![Screenshot 2025-03-30 201950](https://github.com/user-attachments/assets/9133933a-8398-4cb0-8fc3-44e481dbbae1)
 
