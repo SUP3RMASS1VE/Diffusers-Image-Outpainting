@@ -1,14 +1,23 @@
+# Import warning suppression module first
+import fix_warnings
+
 import gradio as gr
 import torch
 from diffusers import AutoencoderKL, TCDScheduler
 from diffusers.models.model_loading_utils import load_state_dict
 from huggingface_hub import hf_hub_download
+import warnings
+import os
 
 from controlnet_union import ControlNetModel_Union
 from pipeline_fill_sd_xl import StableDiffusionXLFillPipeline
 
 from PIL import Image, ImageDraw
 import numpy as np
+
+# Disable the warning about fp16 and non-fp16 filenames 
+os.environ["DIFFUSERS_NO_SAFETENSORS_WARNINGS"] = "1"
+warnings.filterwarnings("ignore", message=".*mixture of fp16 and non-fp16 filenames.*")
 
 config_file = hf_hub_download(
     "xinsir/controlnet-union-sdxl-1.0",
@@ -22,6 +31,8 @@ model_file = hf_hub_download(
     filename="diffusion_pytorch_model_promax.safetensors",
 )
 state_dict = load_state_dict(model_file)
+
+# Load the controlnet model
 model, _, _, _, _ = ControlNetModel_Union._load_pretrained_model(
     controlnet_model, state_dict, model_file, "xinsir/controlnet-union-sdxl-1.0"
 )
@@ -31,6 +42,7 @@ vae = AutoencoderKL.from_pretrained(
     "madebyollin/sdxl-vae-fp16-fix", torch_dtype=torch.float16
 ).to("cuda")
 
+# Load the pipeline
 pipe = StableDiffusionXLFillPipeline.from_pretrained(
     "SG161222/RealVisXL_V5.0_Lightning",
     torch_dtype=torch.float16,
