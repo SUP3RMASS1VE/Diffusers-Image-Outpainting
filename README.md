@@ -33,7 +33,11 @@ This application uses the Stable Diffusion XL model with specialized ControlNet 
 - Optimized for GPU acceleration with PyTorch
 
 ## Installation
+ 
+## Option 1: 
+Install via [Pinokio](https://pinokio.computer).  
 
+## Option 2
 ```bash
 # Clone this repository
 git clone https://github.com/username/diffusers-image-outpaint.git
