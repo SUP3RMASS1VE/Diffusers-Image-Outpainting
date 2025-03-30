@@ -1,11 +1,6 @@
----
-title: Diffusers Image Outpaint
-license: apache-2.0
-short_description: 'Easily expand image boundaries '
----
-
 # Diffusers Image Outpainting
 
+![Screenshot 2025-03-30 201950](https://github.com/user-attachments/assets/9133933a-8398-4cb0-8fc3-44e481dbbae1)
 
 A powerful web application that allows you to expand the boundaries of your images with AI-generated content, creating seamless extensions that match the original image style and context.
 
