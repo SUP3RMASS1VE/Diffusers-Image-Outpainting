@@ -6,7 +6,6 @@ short_description: 'Easily expand image boundaries '
 
 # Diffusers Image Outpainting
 
-![Diffusers Image Outpainting](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/stable-diffusion-outpainting.png)
 
 A powerful web application that allows you to expand the boundaries of your images with AI-generated content, creating seamless extensions that match the original image style and context.
 
@@ -50,6 +49,7 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
 
 # Run the application
