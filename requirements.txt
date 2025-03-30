@@ -1,0 +1,6 @@
+gradio==5.23.1
+transformers==4.45.0
+accelerate==0.33.0
+diffusers==0.30.3
+fastapi
+opencv-python
